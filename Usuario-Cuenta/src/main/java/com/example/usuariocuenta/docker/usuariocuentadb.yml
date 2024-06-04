@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  usuariocuenta-mysql:
+    container_name: usuariocuenta-mysql
+    image: mysql:8.0.29
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=usuariocuenta
+    ports:
+      - "127.0.0.1:3307:3306"
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
